@@ -177,14 +177,14 @@ const GraphGl = ({
           })
         ]}
       />
-      <ViewControlComponent
+      {/* <ViewControlComponent
         fitBounds={fitBounds}
         panBy={panBy}
         zoomBy={zoomBy}
         zoomLevel={viewState.zoom}
         maxZoom={maxZoom}
         minZoom={minZoom}
-      />
+      /> */}
     </div>
   );
 };

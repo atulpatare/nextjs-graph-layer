@@ -1,9 +1,9 @@
 import {JSONLoader, D3ForceLayout, NODE_TYPE} from '../graph-layers';
 import { GraphGL } from '../react-graph-layer';
 
-const BaseGraph = ({ data }) => {
+const BaseGraph = (props: any) => {
     const graph = JSONLoader({
-        json: data,
+        json: props.data,
         nodeParser: (node: any) => ({ id: node.id }),
         edgeParser: (edge: any) => ({
             id: edge.id,
@@ -14,14 +14,15 @@ const BaseGraph = ({ data }) => {
     });
     return (
         <GraphGL
-            graph={graph}
-            layout={new D3ForceLayout()}
+            graph={graph as any}
+            layout={new D3ForceLayout() as any}
             nodeStyle={[
                 {
-                    type: NODE_TYPE.CIRCLE,
-                    radius: 15,
+                    type: NODE_TYPE.ROUNDED_RECTANGLE,
+                    width: 70,
+                    height: 50,
+                    cornerRadius: 10,
                     fill: 'cyan',
-                    opacity: 1,
                 },
             ]}
             edgeStyle={{
