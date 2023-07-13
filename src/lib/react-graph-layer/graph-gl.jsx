@@ -5,7 +5,7 @@ import {OrthographicView} from '@deck.gl/core';
 import {extent} from 'd3-array';
 import ViewControl from './view-control.jsx';
 
-import {Graph, log, SimpleLayout, BaseLayout, GraphEngine, GraphLayer} from '../graph-layers';
+import {Graph, log, SimpleLayout, BaseLayout, GraphEngine, GraphLayer} from '../graph-layers/index.js';
 
 const INITIAL_VIEW_STATE = {
   // the target origin of th view
@@ -177,14 +177,14 @@ const GraphGl = ({
           })
         ]}
       />
-      <ViewControlComponent
+      {/* <ViewControlComponent
         fitBounds={fitBounds}
         panBy={panBy}
         zoomBy={zoomBy}
         zoomLevel={viewState.zoom}
         maxZoom={maxZoom}
         minZoom={minZoom}
-      />
+      /> */}
     </div>
   );
 };

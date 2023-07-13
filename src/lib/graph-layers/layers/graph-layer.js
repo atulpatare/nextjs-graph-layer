@@ -35,6 +35,7 @@ import ImageLayer from './node-layers/image-layer';
 import NodeLabelLayer from './node-layers/label-layer';
 import RectangleLayer from './node-layers/rectangle-layer';
 import RoundedRectangleLayer from './node-layers/rounded-rectangle-layer.js';
+import CustomRoundedRectangleLayer from './node-layers/custom-rounded-rectange-layer';
 import ZoomableMarkerLayer from './node-layers/zoomable-marker-layer';
 
 const NODE_LAYER_MAP = {
