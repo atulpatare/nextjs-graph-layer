@@ -26,7 +26,7 @@ const DECKGL_ACCESSOR_MAP = {
     getLineWidth: 'strokeWidth'
   },
 
-  [NODE_TYPE.ROUNDED_RECTANGLE]: {
+  [NODE_TYPE.PATH_ROUNDED_RECTANGLE]: {
     ...COMMON_DECKGL_PROPS,
     getWidth: 'width',
     getHeight: 'height',
@@ -79,7 +79,7 @@ const DECKGL_ACCESSOR_MAP = {
 const DECKGL_UPDATE_TRIGGERS = {
   [NODE_TYPE.CIRCLE]: ['getFillColor', 'getRadius', 'getLineColor', 'getLineWidth'],
   [NODE_TYPE.RECTANGLE]: ['getFillColor', 'getLineColor', 'getLineWidth'],
-  [NODE_TYPE.ROUNDED_RECTANGLE]: ['getFillColor', 'getLineColor', 'getLineWidth', 'getCornerRadius'],
+  [NODE_TYPE.PATH_ROUNDED_RECTANGLE]: ['getFillColor', 'getLineColor', 'getLineWidth', 'getCornerRadius'],
   [NODE_TYPE.LABEL]: [
     'getColor',
     'getText',

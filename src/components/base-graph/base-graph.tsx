@@ -18,7 +18,7 @@ const BaseGraph = (props: any) => {
             layout={new D3ForceLayout() as any}
             nodeStyle={[
                 {
-                    type: NODE_TYPE.ROUNDED_RECTANGLE,
+                    type: NODE_TYPE.PATH_ROUNDED_RECTANGLE,
                     width: 70,
                     height: 50,
                     cornerRadius: 10,
