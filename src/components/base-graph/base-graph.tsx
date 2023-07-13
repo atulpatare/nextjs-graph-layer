@@ -1,5 +1,5 @@
-import {JSONLoader, D3ForceLayout, NODE_TYPE} from '../graph-layers';
-import { GraphGL } from '../react-graph-layer';
+import {JSONLoader, D3ForceLayout, NODE_TYPE} from '../../lib/graph-layers';
+import { GraphGL } from '../../lib/react-graph-layer';
 
 const BaseGraph = (props: any) => {
     const graph = JSONLoader({
