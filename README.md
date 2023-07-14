@@ -1,4 +1,4 @@
-This repo demonstrate the use of `deck.gl graph layers` to display a custom layer of rounded rectangle.
+This repo demonstrate the use of deck.gl's [graph layers](https://github.com/visgl/deck.gl-community/tree/master/modules/graph-layers) to display a custom layer of rounded rectangles.
 
 ### Custom Layers
 
