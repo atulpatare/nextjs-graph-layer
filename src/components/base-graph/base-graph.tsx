@@ -1,30 +1,46 @@
-import {JSONLoader, D3ForceLayout, NODE_TYPE} from '../../lib/graph-layers';
+import { JSONLoader, D3ForceLayout, NODE_TYPE, Graph } from '../../lib/graph-layers';
 import { GraphGL } from '../../lib/react-graph-layer';
 
-const BaseGraph = (props: any) => {
+interface Node {
+    id: number;
+}
+
+interface Edge {
+    id: number;
+    sourceId: number;
+    targetId: number;
+}
+
+interface BaseGraphProps {
+    data: {
+        name: string;
+        nodes: Node[],
+        edges: Edge[];
+    }
+}
+
+const BaseGraph = (props: BaseGraphProps) => {
     const graph = JSONLoader({
         json: props.data,
-        nodeParser: (node: any) => ({ id: node.id }),
-        edgeParser: (edge: any) => ({
+        nodeParser: (node: Node) => ({ id: node.id }),
+        edgeParser: (edge: Edge) => ({
             id: edge.id,
             sourceId: edge.sourceId,
             targetId: edge.targetId,
             directed: true,
         }),
-    });
+    }) || new Graph();
     return (
         <GraphGL
-            graph={graph as any}
+            graph={graph}
             layout={new D3ForceLayout() as any}
-            nodeStyle={[
-                {
-                    type: NODE_TYPE.ROUNDED_RECTANGLE,
-                    width: 70,
-                    height: 50,
-                    cornerRadius: 10,
-                    fill: 'cyan',
-                },
-            ]}
+            nodeStyle={[{
+                type: NODE_TYPE.PATH_ROUNDED_RECTANGLE,
+                width: 70,
+                height: 50,
+                cornerRadius: 10,
+                fill: 'cyan',
+            }]}
             edgeStyle={{
                 stroke: 'gray',
                 strokeWidth: 2,
